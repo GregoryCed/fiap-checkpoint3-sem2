@@ -2,6 +2,7 @@ package gregoryced.com.github.fiap_checkpoint3_sem2.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,9 +31,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ContatoController {
 	
-   private final ContatoService contatoService = new ContatoService();
-   private final ContatoMapper contatoMapper = new ContatoMapper();
-   private final ContatoRepository contatoRepository = null;
+	@Autowired
+   private  ContatoService contatoService;
+	@Autowired
+   private  ContatoMapper contatoMapper;
+	@Autowired
+   private  ContatoRepository contatoRepository;
    
    @GetMapping
    public ResponseEntity<List<ContatoResponseDto>> list() {

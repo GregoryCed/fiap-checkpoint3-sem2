@@ -5,10 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Contatos {
 	
 	@Id
@@ -17,9 +19,5 @@ public class Contatos {
 	
 	@Column()
 	private String nome;
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 	
 }
